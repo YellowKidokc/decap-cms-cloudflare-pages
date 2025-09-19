@@ -1,21 +1,18 @@
 backend:
   name: github
-  repo: username/repo
-  branch: main # Branch to update (optional; defaults to master)
-  base_url: https://example.com
+  repo: YOUR_GH_USERNAME/YOUR_REPO_NAME # TODO: Please update this
+  branch: main
   auth_endpoint: /api/auth
-media_folder: static/img
-public_folder: /img
+
+media_folder: "static/assets/uploads"
+public_folder: "/assets/uploads"
+
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'content/blog'
+  - name: "articles"
+    label: "Articles"
+    folder: "content/articles"
     create: true
-    slug: '{{slug}}'
-    editor:
-      preview: false
+    slug: "{{slug}}"
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
