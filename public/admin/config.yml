@@ -1,8 +1,7 @@
 backend:
   name: github
-  repo: YOUR_GH_USERNAME/YOUR_REPO_NAME # TODO: Please update this
+  repo: YOUR_GH_USERNAME/good-and-evil-site   # <— change me
   branch: main
-  auth_endpoint: /api/auth
 
 media_folder: "public/assets/uploads"
 public_folder: "/assets/uploads"
@@ -10,9 +9,15 @@ public_folder: "/assets/uploads"
 collections:
   - name: "articles"
     label: "Articles"
-    folder: "content/articles"
+    folder: "src/content/articles"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Background", name: "bg", widget: "color", default: "#0b1220" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Optional HTML embed"
+        name: "embed"
+        widget: "file"
+        media_folder: "public/embeds"
+        public_folder: "/embeds"
